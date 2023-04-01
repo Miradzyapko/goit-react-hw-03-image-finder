@@ -1,4 +1,5 @@
 
+import { render } from '@testing-library/react';
 import React, { Component } from 'react';
 import { Form } from './Form/Form';
 
@@ -6,7 +7,7 @@ import { Form } from './Form/Form';
 
 
 
-export default  class App extends Component {
+export   class App extends Component {
 
   
     state = {
@@ -17,27 +18,27 @@ export default  class App extends Component {
     };
     
  
- }
+ 
     FormSubmitHandler = searchImgName => {
-      
+      this.setState ({searchImgName});
        
       };
   
-      
+     render() {
   
   
 
   
    
   
-    render() ; {
+    
       
     
     
     return (
       <div>
       
-        <Form  onSubmit={this.FormSubmitHandler} />
+        <Form  onSubmit={this.FormSubmitHandler}/>
       
          
  </div>
@@ -46,7 +47,9 @@ export default  class App extends Component {
 
 
 
-    )
-  }
+    );
+    }
+  
+}
 
 

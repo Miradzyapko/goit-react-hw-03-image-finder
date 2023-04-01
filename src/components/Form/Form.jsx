@@ -2,15 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types'; 
 import { Component } from 'react';
 import { Button, SearchForm, Header} from './Form.Styled';
- class Form extends Component   {
+ export  class Form extends Component   {
     state = {
         searchImgName: '',
     };
-    static propTypes = {
-      searchImgName: PropTypes.string, 
-      handleSubmit: PropTypes.func,
-      handleChange: PropTypes.func 
-  }
+   
     handleChange = (e) => { 
       const { searchImgName } = e.currentTarget;
       this.setState({
@@ -40,5 +36,8 @@ return (
 );
 }
 }
-
-export default Form;
+ Form.PropTypes = {
+  searchImgName: PropTypes.string, 
+  handleSubmit: PropTypes.func,
+  handleChange: PropTypes.func 
+}
