@@ -18,7 +18,7 @@ cursor: pointer
 border-radius: 4px
 border: 1px solid grey;
 background: orange`;
-export const Header = styled.header`
+export const Searchbar = styled.header`
   top: 0;
   left: 0;
   position: sticky;
