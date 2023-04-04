@@ -8,6 +8,7 @@ import { Button } from './Button/Button';
 import { Modal } from './Modal/Modal';
 import axios from 'axios';
 import { Container } from './App.Styled';
+import 'react-toastify/dist/ReactToastify.css'
 export   class App extends Component {
 
   
