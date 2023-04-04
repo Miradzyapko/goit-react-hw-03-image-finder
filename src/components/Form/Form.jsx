@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify'
 import PropTypes from 'prop-types'; 
 import { Component } from 'react';
 import { Button, SearchForm, Searchbar} from './Form.Styled';
@@ -12,24 +13,27 @@ import { Button, SearchForm, Searchbar} from './Form.Styled';
       handleChange: PropTypes.func,
     };
     handleChange = e => { 
-      const { searchImgName } = e.currentTarget;
-      this.setState({
-        searchImgName,
+      this.setState({ searchImgName: e.currentTarget.value.toLowerCase() });
 
-      });
+      
   };
   handleSubmit = e => {
     e.preventDefault();
-    this.props.onSubmit(this.state)
+    if (this.state.searchImgName.trim() === '') {
+      return toast.error('Write search name');
+    }
+    this.props.onSubmit(this.state.searchImgName)
     this.setState({ searchImgName: '' });
 };
-  render()  {
+  render() {
+   const { searchImgName } = this.state;
 return (
 <Searchbar>
 <SearchForm onSubmit={this.handleSubmit}>
         <input
           type="text"
           name="searchImgName"
+          value={searchImgName}
           autoComplete="off"
           placeholder="Search images..."
           onChange = {this.handleChange}
@@ -39,6 +43,5 @@ return (
    </Searchbar>
 );
 }
-}
+ }
  
-export default Form;

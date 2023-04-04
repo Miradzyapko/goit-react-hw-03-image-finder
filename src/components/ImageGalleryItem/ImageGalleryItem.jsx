@@ -1,20 +1,22 @@
 import PropTypes from 'prop-types';
-import { List, ListItem, Item} from './ContactList.Styled'; 
-import { Button } from './ContactList.Styled';
+import { ListItem, Img } from './ImageGalleryItem.Styled'; 
 
-export const ImageGallery = ({img }) => {
+
+ export const ImageGalleryItem = ({ webformatURL, largeImg, onClick  }) => {
     return (
-        <List>   
-        {imgs.map(({ img}) => (
-            <li class="gallery-item">
-            <img src="" alt="" />
-          </li>
-        ))}
-    </List>
+        <ListItem>
+        <Img src={webformatURL} onClick={() => onClick(largeImg)} alt="" />
+    </ListItem>
 )
-        }
-ImageGallery.propTypes = {
-   
-    }
+
+}
+
+ImageGalleryItem.propTypes = {
+    webformatURL: PropTypes.string.isRequired,
+    largeImg: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired,
+}
+
+  
 
 
