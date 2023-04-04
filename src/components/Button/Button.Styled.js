@@ -6,4 +6,4 @@ cursor: pointer
 border-radius: 4px
 border: 1px solid grey;
 background: orange
-width: 200px`;
+max-width: 200px`;
